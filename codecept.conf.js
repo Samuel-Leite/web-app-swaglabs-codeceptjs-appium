@@ -1,15 +1,3 @@
-const {
-  setHeadlessWhen,
-  setCommonPlugins
-} = require('@codeceptjs/configure');
-// turn on headless mode when running with HEADLESS=true environment variable
-// export HEADLESS=true && npx codeceptjs run
-setHeadlessWhen(process.env.HEADLESS);
-
-// enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
-setCommonPlugins();
-
-/** @type {CodeceptJS.MainConfig} */
 exports.config = {
   output: './output',
   helpers: {
@@ -17,33 +5,60 @@ exports.config = {
       platform: 'Android',
       app: 'C:/Users/slle/OneDrive - GFT Technologies SE/Desktop/Samuel Leite/AutomationProject/Mobile/app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk',
       desiredCapabilities: {
-        appPackage: "com.swaglabsmobileapp",
-        appActivity: "MainActivity",
-        deviceName: "pixel",
-        platformVersion: "9"
+        appPackage: 'com.swaglabsmobileapp',
+        appActivity: 'MainActivity',
+        deviceName: 'pixel',
+        platformVersion: '9'
       }
     }
   },
   include: {
-    "I": "./steps_file.js",
-    "loginPage": "./pages/login_page.js",
-    "homePage": "./pages/home_page.js",
-    "productPage": "./pages/product.js",
-    "cartPage": "./pages/cart.js"
+    I: './steps_file.js',
+    loginPage: './pages/login_page.js',
+    homePage: './pages/home_page.js',
+    productPage: './pages/product.js',
+    cartPage: './pages/cart.js'
   },
-  bootstrap: null,
   mocha: {},
+  bootstrap: null,
+  timeout: null,
+  teardown: null,
+  hooks: [],
+  gherkin: {
+    features: './features/*.feature',
+    steps: ['./step_definitions/app_steps.js']
+  },
   plugins: {
-    retryFailedStep: {
+    screenshotOnFail: {
       enabled: true
     },
-    screenshotOnFail: {
+    retryFailedStep: {
       enabled: true
     },
     allure: {
       enabled: true
-    }
+    },
+    tryTo: {
+      enabled: true
+    },
+    retryTo: {
+      enabled: true
+    },
+    eachElement: {
+      enabled: true
+    },
+    pauseOnFail: {}
   },
+  stepTimeout: 0,
+  stepTimeoutOverride: [{
+      pattern: 'wait.*',
+      timeout: 0
+    },
+    {
+      pattern: 'amOnPage',
+      timeout: 0
+    }
+  ],
   name: 'mobile-automation',
-  tests: './steps/*_test.js',
+  // tests: './steps/*_test.js'
 }

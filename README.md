@@ -12,11 +12,20 @@ npx codeceptjs init
 ## Capabilities
 Os campos appPackage e appActivity é obtido com o desenvolvedor
 
-## Gerar outra class de teste
+## Gerar outro método de teste
 npx codeceptjs gt
 
 ## Gerar Page Object
 npx codeceptjs gpo
+
+## Configuração e os métodos BDD para os cenários
+npx codeceptjs gherkin:init
+npx codeceptjs gherkin:snippets
+
+## Sugestões de extensões para BDD
+BDD Highlighter
+Snippets and Syntax Highlight for Gherkin (Cucumber)
+Cucumber (Gherkin) Full Support
 
 ## Comandos para rodar a automação dos testes
 npx codeceptjs run --steps (vai executar todos os testes com o final _tests.js)
