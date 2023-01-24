@@ -1,0 +1,18 @@
+{
+  "name": "mobile-automation",
+  "version": "1.0.0",
+  "description": "Projeto de testes automatizados",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx codeceptjs run --steps",
+    "android": "npx codeceptjs run --steps PLATFORM=Android APP='c:\\Users\\slle\\OneDrive - GFT Technologies SE\\Desktop\\Samuel Leite\\AutomationProject\\Mobile\\app\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk' DEVICE=android_device VERSION=9 PACKAGE=com.swaglabsmobileapp ACTIVITY=MainActivity"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^3.3.7",
+    "node-random-name": "^1.0.1",
+    "random-number": "^0.0.9",
+    "webdriverio": "^8.2.1"
+  }
+}
