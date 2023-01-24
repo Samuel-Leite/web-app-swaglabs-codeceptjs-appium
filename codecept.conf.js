@@ -39,6 +39,9 @@ exports.config = {
     },
     screenshotOnFail: {
       enabled: true
+    },
+    allure: {
+      enabled: true
     }
   },
   name: 'mobile-automation',

@@ -29,6 +29,11 @@ npm install random-number
 ## Instalação do driver para rodar testes em browser
 appium --allow-insecure chromedriver_autodownload
 
+## Relatorio Allure
+npm install -g allure-commandline --save-dev
+npx codeceptjs run --plugins allure
+npx allure serve output
+
 
 
 ## Referenciar o formato dos campos ao mapear
