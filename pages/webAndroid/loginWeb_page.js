@@ -17,5 +17,6 @@ module.exports = {
     I.fillField(this.fields.userName,userName)
     I.fillField(this.fields.password,password)
     I.click(this.button.enter)
+    I.wait(2)
   },
 }
