@@ -9,25 +9,32 @@ exports.config = {
         appActivity: 'MainActivity',
         deviceName: 'pixel',
         platformVersion: '9'
+
+        // deviceName: 'pixel',
+        // platformVersion: '9',
+        // automationName: 'UiAutomator2',
+        // browserName: 'Chrome'
+
       }
     }
   },
   include: {
-    I: './steps_file.js',
-    loginPage: './pages/login_page.js',
-    homePage: './pages/home_page.js',
-    productPage: './pages/product.js',
-    cartPage: './pages/cart.js'
+    "I": "./steps_file.js",
+    "loginAppPage": "./pages/appAndroid/loginApp_page.js",
+    "homeAppPage": "./pages/appAndroid/homeApp_page.js",
+    "productAppPage": "./pages/appAndroid/productApp_page.js",
+    "cartAppPage": "./pages/appAndroid/cartApp_page.js",
+    "loginWebPage": "./pages/webAndroid/loginWeb_page.js"
   },
   mocha: {},
   bootstrap: null,
   timeout: null,
   teardown: null,
   hooks: [],
-  gherkin: {
-    features: './features/*.feature',
-    steps: ['./step_definitions/app_steps.js']
-  },
+  // gherkin: {
+  //   features: './features/*.feature',
+  //   steps: ['./step_definitions/app_steps.js']
+  // },
   plugins: {
     screenshotOnFail: {
       enabled: true
@@ -60,5 +67,5 @@ exports.config = {
     }
   ],
   name: 'mobile-automation',
-  // tests: './steps/*_test.js'
+  tests: './steps/app_test.js'
 }

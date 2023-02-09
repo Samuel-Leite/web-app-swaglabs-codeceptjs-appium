@@ -1,7 +1,7 @@
 Feature('buy produts');
 
 // variable global
-const { I, loginPage, homePage, productPage, cartPage } = inject()
+const { loginAppPage, homeAppPage, productAppPage, cartAppPage } = inject()
 const name = require('../Utils/name')
 const code = require('../Utils/code')
 
@@ -14,79 +14,79 @@ const password = 'secret_sauce'
 
 Scenario('Buy Sauce Labs Backpack with success',  () => {
 
-    loginPage.loginApp(user, password)
-    homePage.checkLoginSuccess()
-    homePage.selectToggle()
-    productPage.addBackpackToCart()
-    productPage.backMenu()
-    homePage.checkCart()
-    cartPage.checkoutProduct()
-    cartPage.dataBuyer(firstName, lastName, postalCode)
-    cartPage.completePayment()
+    loginAppPage.loginApp(user, password)
+    homeAppPage.checkLoginSuccess()
+    homeAppPage.selectToggle()
+    productAppPage.addBackpackToCart()
+    productAppPage.backMenu()
+    homeAppPage.checkCart()
+    cartAppPage.checkoutProduct()
+    cartAppPage.dataBuyer(firstName, lastName, postalCode)
+    cartAppPage.completePayment()
 });
 
 Scenario('Buy Sauce Labs Bike Light with success',  () => {
 
-    loginPage.loginApp(user, password)
-    homePage.checkLoginSuccess()
-    homePage.selectToggle()
-    productPage.addBikeLightToCart()
-    productPage.backMenu()
-    homePage.checkCart()
-    cartPage.checkoutProduct()
-    cartPage.dataBuyer(firstName, lastName, postalCode)
-    cartPage.completePayment()
+    loginAppPage.loginApp(user, password)
+    homeAppPage.checkLoginSuccess()
+    homeAppPage.selectToggle()
+    productAppPage.addBikeLightToCart()
+    productAppPage.backMenu()
+    homeAppPage.checkCart()
+    cartAppPage.checkoutProduct()
+    cartAppPage.dataBuyer(firstName, lastName, postalCode)
+    cartAppPage.completePayment()
 });
 
 Scenario('Buy Sauce Labs Bolt T-Shirt with success',  () => {
 
-    loginPage.loginApp(user, password)
-    homePage.checkLoginSuccess()
-    homePage.selectToggle()
-    productPage.addBoltTShirtToCart()
-    productPage.backMenu()
-    homePage.checkCart()
-    cartPage.checkoutProduct()
-    cartPage.dataBuyer(firstName, lastName, postalCode)
-    cartPage.completePayment()
+    loginAppPage.loginApp(user, password)
+    homeAppPage.checkLoginSuccess()
+    homeAppPage.selectToggle()
+    productAppPage.addBoltTShirtToCart()
+    productAppPage.backMenu()
+    homeAppPage.checkCart()
+    cartAppPage.checkoutProduct()
+    cartAppPage.dataBuyer(firstName, lastName, postalCode)
+    cartAppPage.completePayment()
 });
 
 Scenario('Buy Sauce Labs Fleece Jacket with success',  () => {
 
-    loginPage.loginApp(user, password)
-    homePage.checkLoginSuccess()
-    homePage.selectToggle()
-    productPage.addFleeceJacketToCart()
-    productPage.backMenu()
-    homePage.checkCart()
-    cartPage.checkoutProduct()
-    cartPage.dataBuyer(firstName, lastName, postalCode)
-    cartPage.completePayment()
+    loginAppPage.loginApp(user, password)
+    homeAppPage.checkLoginSuccess()
+    homeAppPage.selectToggle()
+    productAppPage.addFleeceJacketToCart()
+    productAppPage.backMenu()
+    homeAppPage.checkCart()
+    cartAppPage.checkoutProduct()
+    cartAppPage.dataBuyer(firstName, lastName, postalCode)
+    cartAppPage.completePayment()
 });
 
 Scenario('Buy Sauce Labs Onesie with success',  () => {
 
-    loginPage.loginApp(user, password)
-    homePage.checkLoginSuccess()
-    homePage.selectToggle()
-    productPage.addOnesieToCart()
-    productPage.backMenu()
-    homePage.checkCart()
-    cartPage.checkoutProduct()
-    cartPage.dataBuyer(firstName, lastName, postalCode)
-    cartPage.completePayment()
+    loginAppPage.loginApp(user, password)
+    homeAppPage.checkLoginSuccess()
+    homeAppPage.selectToggle()
+    productAppPage.addOnesieToCart()
+    productAppPage.backMenu()
+    homeAppPage.checkCart()
+    cartAppPage.checkoutProduct()
+    cartAppPage.dataBuyer(firstName, lastName, postalCode)
+    cartAppPage.completePayment()
 });
 
 
 Scenario('Buy T-Shirt RED with success',  () => {
 
-    loginPage.loginApp(user, password)
-    homePage.checkLoginSuccess()
-    homePage.selectToggle()
-    productPage.addTShirtREDToCart()
-    productPage.backMenu()
-    homePage.checkCart()
-    cartPage.checkoutProduct()
-    cartPage.dataBuyer(firstName, lastName, postalCode)
-    cartPage.completePayment()
+    loginAppPage.loginApp(user, password)
+    homeAppPage.checkLoginSuccess()
+    homeAppPage.selectToggle()
+    productAppPage.addTShirtREDToCart()
+    productAppPage.backMenu()
+    homeAppPage.checkCart()
+    cartAppPage.checkoutProduct()
+    cartAppPage.dataBuyer(firstName, lastName, postalCode)
+    cartAppPage.completePayment()
 });
