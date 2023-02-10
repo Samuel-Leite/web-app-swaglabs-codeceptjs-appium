@@ -2,10 +2,10 @@ const { I } = inject();
 
 module.exports = {
   buttons: {
-    removeProduct: '~test-REMOVE',
+    removeProduct: '//*[contains(text(),"Remove")]',
     continueShopping: '//input[@id = "continue"]',
     checkout: '//*[contains(text(),"Checkout")]',
-    cancel: 'test-CANCEL',
+    cancel: '//button[@id = "cancel"]',
     finish: '//button[@id = "finish"]'
   },
 
