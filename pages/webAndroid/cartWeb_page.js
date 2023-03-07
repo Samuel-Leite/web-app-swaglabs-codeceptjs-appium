@@ -16,7 +16,7 @@ module.exports = {
   },
 
   message: {
-    paymentSuccess: '//*[contains(text(),"THANK YOU FOR YOUR ORDER")]'
+    paymentSuccess: '//*[contains(text(),"Thank you for your order!")]'
   },
 
   checkoutProduct() {
@@ -33,6 +33,14 @@ module.exports = {
   },
 
   completePayment(){
+    I.touchPerform([{
+      action: 'longPress',
+      options: { x: 600, y: 1000 }}, 
+    {  
+      action: 'moveTo', 
+      options: { x: 600, y: 450 } 
+    }, {action: 'release'}]),
+
     I.waitForElement(this.buttons.finish)
     I.click(this.buttons.finish)
     I.wait(3)
@@ -42,9 +50,10 @@ module.exports = {
         options: { x: 600, y: 450 }}, 
       {  
         action: 'moveTo', 
-        options: { x: 600, y: 1200 } 
+        options: { x: 600, y: 1000 } 
       }, {action: 'release'}]),
 
+    I.wait(3)  
     I.waitForElement(this.message.paymentSuccess)
     I.seeElement(this.message.paymentSuccess)
     I.wait(3)

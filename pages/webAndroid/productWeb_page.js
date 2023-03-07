@@ -21,7 +21,7 @@ module.exports = {
       options: { x: 600, y: 1200 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: 450 } 
+      options: { x: 600, y: 20 } 
     }, {action: 'release'}]),
 
     I.wait(3)
@@ -47,7 +47,7 @@ module.exports = {
       options: { x: 600, y: 1200 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: 450 } 
+      options: { x: 600, y: 20 } 
     }, {action: 'release'}]),
 
     I.wait(3)
@@ -61,7 +61,7 @@ module.exports = {
       options: { x: 600, y: 1600 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: -2800 } 
+      options: { x: 600, y: -3200 } 
     }, {action: 'release'}]),
     I.wait(2)
 
@@ -76,7 +76,7 @@ module.exports = {
       options: { x: 600, y: 1200 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: 450 } 
+      options: { x: 600, y: 20 } 
     }, {action: 'release'}]),
 
     I.wait(3)
@@ -90,7 +90,7 @@ module.exports = {
       options: { x: 600, y: 1600 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: -4800 } 
+      options: { x: 600, y: -5600 } 
     }, {action: 'release'}]),
     I.wait(2)
 
@@ -105,7 +105,7 @@ module.exports = {
       options: { x: 600, y: 1200 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: 450 } 
+      options: { x: 600, y: 20 } 
     }, {action: 'release'}]),
 
     I.wait(3)
@@ -119,7 +119,7 @@ module.exports = {
       options: { x: 600, y: 1600 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: -6800 } 
+      options: { x: 600, y: -7800 } 
     }, {action: 'release'}]),
     I.wait(2)
 
@@ -134,7 +134,7 @@ module.exports = {
       options: { x: 600, y: 1200 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: 450 } 
+      options: { x: 600, y: 20 } 
     }, {action: 'release'}]),
 
     I.wait(3)
@@ -148,7 +148,7 @@ module.exports = {
       options: { x: 600, y: 1600 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: -8800 } 
+      options: { x: 600, y: -10000 } 
     }, {action: 'release'}]),
     I.wait(2)
 
@@ -163,7 +163,7 @@ module.exports = {
       options: { x: 600, y: 1200 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: 450 } 
+      options: { x: 600, y: 20 } 
     }, {action: 'release'}]),
 
     I.wait(3)
@@ -174,10 +174,10 @@ module.exports = {
   backMenu(){
     I.touchPerform([{
       action: 'longPress',
-      options: { x: 600, y: 450 }}, 
+      options: { x: 600, y: 70 }}, 
     {  
       action: 'moveTo', 
-      options: { x: 600, y: 1200 } 
+      options: { x: 600, y: 1500 } 
     }, {action: 'release'}]),
   
     I.wait(3)

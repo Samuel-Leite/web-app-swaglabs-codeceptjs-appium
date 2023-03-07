@@ -5,15 +5,15 @@ exports.config = {
       platform: 'Android',
       app: 'C:/Users/slle/OneDrive - GFT Technologies SE/Desktop/Samuel Leite/AutomationProject/Mobile/app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk',
       desiredCapabilities: {
-        appPackage: 'com.swaglabsmobileapp',
-        appActivity: 'MainActivity',
-        deviceName: 'pixel',
-        platformVersion: '9'
-
+        // appPackage: 'com.swaglabsmobileapp',
+        // appActivity: 'MainActivity',
         // deviceName: 'pixel',
-        // platformVersion: '9',
-        // automationName: 'UiAutomator2',
-        // browserName: 'Chrome'
+        // platformVersion: '9'
+
+        deviceName: 'pixel',
+        platformVersion: '9',
+        automationName: 'UiAutomator2',
+        browserName: 'Chrome'
 
       }
     }
@@ -35,8 +35,8 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/*.feature',
-    steps: ['./step_definitions/app_steps.js']
+    features: './features/webTest.feature',
+    steps: ['./step_definitions/web_steps.js']
   },
   plugins: {
     screenshotOnFail: {
@@ -70,5 +70,6 @@ exports.config = {
     }
   ],
   name: 'mobile-automation',
+  // tests: './steps/web_test.js',
   // tests: './steps/app_test.js'
 }
