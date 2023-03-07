@@ -46,6 +46,6 @@ npx allure serve output
 
 
 ## Referenciar o formato dos campos ao mapear
-. -> class
-# - > id
-~ -> acessibility id
+"." -> class
+"#" - > id
+"~" -> acessibility id
