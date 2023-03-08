@@ -41,6 +41,7 @@ Responsável por gerar nomes randômicos durante a execução dos testes
 # Observações:
 Faça o donwload do template no repositório de código para utilizar no seu projeto em especifico, feito isso, fique a vontande para usufruir dos recursos disponíveis e também customizar de acordo com sua necessidade.
 
+
 # Comandos utilizados durante a construção da automação Mobile com CodeceptJS
 
 ## Inicialização do projeto:
@@ -85,8 +86,6 @@ appium --allow-insecure chromedriver_autodownload
 npm install -g allure-commandline --save-dev
 npx codeceptjs run --plugins allure
 npx allure serve output
-
-
 
 ## Referenciar o formato dos campos ao mapear
 "." -> class
