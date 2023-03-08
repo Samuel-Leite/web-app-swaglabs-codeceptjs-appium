@@ -1,4 +1,47 @@
-# Projeto de automação de testes com codeceptjs e appium
+# Projeto de automação de testes com CodeceptJS com APPIUM
+
+# Pré-Requisitos:
+Java 11 JDK,
+VS Code
+
+## Estrutura do Projeto
+./features/appTest.feature:
+Constam os cenários de testes no Aplicativo Mobile escritos em BDD para execução
+
+./features/webTest.feature:
+Constam os cenários de testes WEB Mobile escritos em BDD para execução
+
+./output:
+Evidências da execução dos testes
+
+./pages/appAndroid:
+Responsável pelos mapeamento do Aplicativo Mobile
+
+./pages/webAndroid:
+Responsável pelos mapeamento da WEB Mobile
+
+./step_definitions/app_steps:
+Responsável pelos steps do Aplicativo Mobile versus BDD
+
+./step_definitions/web_steps:
+Responsável pelos steps da WEB Mobile versus BDD
+
+./steps/app_test.js:
+Constam os cenários de testes do Aplicativo Mobile para execução sem BDD
+
+./steps/web_test.js:
+Constam os cenários de testes da WB Mobile para execução sem BDD
+
+./Utils/code.js:
+Responsável por gerar números randômicos durante a execução dos testes
+
+./Utils/name.js:
+Responsável por gerar nomes randômicos durante a execução dos testes
+
+# Observações:
+Faça o donwload do template no repositório de código para utilizar no seu projeto em especifico, feito isso, fique a vontande para usufruir dos recursos disponíveis e também customizar de acordo com sua necessidade.
+
+# Comandos utilizados durante a construção da automação Mobile com CodeceptJS
 
 ## Inicialização do projeto:
 npm init
