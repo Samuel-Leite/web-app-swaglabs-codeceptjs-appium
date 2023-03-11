@@ -8,11 +8,15 @@ const code = require('../Utils/code')
 const firstName = name.getFirstName()
 const lastName = name.getLastName()
 const postalCode = code.getCode()
-const user = 'standard_user'
-const password = 'secret_sauce'
+
+// YAML credencial to login
+const fs = require("fs");
+const YAML = require("js-yaml");
+const raw = fs.readFileSync("resource/credencial.yaml")
+const data = YAML.load(raw)
 
 Before(() => {
-  loginWebPage.loginApp(user, password)
+  loginWebPage.loginApp(data.valid_credential.user, data.valid_credential.password)
   homeWebPage.checkLoginSuccess()
 });
 

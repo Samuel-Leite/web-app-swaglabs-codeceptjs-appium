@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx codeceptjs run --steps",
-    "android": "npx codeceptjs run --steps PLATFORM=Android APP='c:\\Users\\slle\\OneDrive - GFT Technologies SE\\Desktop\\Samuel Leite\\AutomationProject\\Mobile\\app\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk' DEVICE=android_device VERSION=9 PACKAGE=com.swaglabsmobileapp ACTIVITY=MainActivity"
+    "app": "npx codeceptjs run --steps PLATFORM=Android APP='c:\\Users\\slle\\OneDrive - GFT Technologies SE\\Desktop\\Samuel Leite\\AutomationProject\\Mobile\\app\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk' DEVICE=android_device VERSION=9 PACKAGE=com.swaglabsmobileapp ACTIVITY=MainActivity",
+    "web": "npx codeceptjs run '{\"helpers\": {\"Appium\": { \"platform\": \"Android\", \"desiredCapabilities\": { \"deviceName\": \"pixel\", \"platformVersion\": \"9\", \"automationName\": \"UiAutomator2\", \"browserName\": \"Chrome\" }}}} ' "
   },
   "author": "",
   "license": "ISC",

@@ -91,3 +91,6 @@ npx allure serve output
 "." -> class
 "#" - > id
 "~" -> acessibility id
+
+## Instalação do YAML
+npm i js-yaml

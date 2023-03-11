@@ -9,13 +9,17 @@ exports.config = {
         appActivity: 'MainActivity',
         deviceName: 'pixel',
         platformVersion: '9'
-
-        // deviceName: 'pixel',
-        // platformVersion: '9',
-        // automationName: 'UiAutomator2',
-        // browserName: 'Chrome'
       }
-    }
+    },
+    // Appium: {
+    //   platform: 'Android',
+    //   desiredCapabilities: {
+    //     deviceName: 'pixel',
+    //     platformVersion: '9',
+    //     automationName: 'UiAutomator2',
+    //     browserName: 'Chrome'
+    //   }
+    // }
   },
   include: {
     "I": "./steps_file.js",
@@ -33,10 +37,13 @@ exports.config = {
   timeout: null,
   teardown: null,
   hooks: [],
-  gherkin: {
-    features: './features/appTest.feature',
-    steps: ['./step_definitions/app_steps.js']
-  },
+  // gherkin: {
+  //   features: './features/appTest.feature',
+  //   steps: ['./step_definitions/app_steps.js']
+
+  //   features: './features/webTest.feature',
+  //   steps: ['./step_definitions/web_steps.js']
+  // },
   plugins: {
     screenshotOnFail: {
       enabled: true
@@ -70,5 +77,5 @@ exports.config = {
   ],
   name: 'mobile-automation',
   // tests: './steps/web_test.js',
-  // tests: './steps/app_test.js'
+  tests: './steps/app_test.js'
 }
