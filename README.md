@@ -83,8 +83,7 @@ npm install random-number
 appium --allow-insecure chromedriver_autodownload
 
 ## Relatorio Allure
-npm install -g allure-commandline --save-dev
-npx codeceptjs run --plugins allure
+npm install @codeceptjs/allure-legacy --save-dev
 npx allure serve output
 
 ## Referenciar o formato dos campos ao mapear

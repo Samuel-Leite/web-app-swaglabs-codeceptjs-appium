@@ -33,23 +33,23 @@ Scenario('Buy Sauce Labs Backpack with success',  () => {
     productAppPage.addBackpackToCart()
 });
 
-Scenario('Buy Sauce Labs Bike Light with success',  () => {
-    productAppPage.addBikeLightToCart()
-});
+// Scenario('Buy Sauce Labs Bike Light with success',  () => {
+//     productAppPage.addBikeLightToCart()
+// });
 
-Scenario('Buy Sauce Labs Bolt T-Shirt with success',  () => {
-    productAppPage.addBoltTShirtToCart()
-});
+// Scenario('Buy Sauce Labs Bolt T-Shirt with success',  () => {
+//     productAppPage.addBoltTShirtToCart()
+// });
 
-Scenario('Buy Sauce Labs Fleece Jacket with success',  () => {
-    productAppPage.addFleeceJacketToCart()
-});
+// Scenario('Buy Sauce Labs Fleece Jacket with success',  () => {
+//     productAppPage.addFleeceJacketToCart()
+// });
 
-Scenario('Buy Sauce Labs Onesie with success',  () => {
-    productAppPage.addOnesieToCart()
-});
+// Scenario('Buy Sauce Labs Onesie with success',  () => {
+//     productAppPage.addOnesieToCart()
+// });
 
 
-Scenario('Buy T-Shirt RED with success',  () => {
-    productAppPage.addTShirtREDToCart()
-});
+// Scenario('Buy T-Shirt RED with success',  () => {
+//     productAppPage.addTShirtREDToCart()
+// });

@@ -54,6 +54,10 @@ exports.config = {
     allure: {
       enabled: true
     },
+    stepByStepReport: {
+      enabled: true,
+      screenshotsForAllureReport: true
+    },
     tryTo: {
       enabled: true
     },
