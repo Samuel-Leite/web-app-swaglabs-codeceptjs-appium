@@ -1,5 +1,5 @@
 exports.config = {
-  output: "./output",
+  output: './output',
   helpers: {
     // Appium: {
     //   platform: "Android",
@@ -12,26 +12,26 @@ exports.config = {
     //   },
     // },
     Appium: {
-      platform: "Android",
+      platform: 'Android',
       desiredCapabilities: {
-        deviceName: "pixel",
-        platformVersion: "9",
-        automationName: "UiAutomator2",
-        browserName: "Chrome",
-      },
-    },
+        deviceName: 'pixel',
+        platformVersion: '9',
+        automationName: 'UiAutomator2',
+        browserName: 'Chrome'
+      }
+    }
   },
   include: {
-    I: "./steps_file.js",
-    loginAppPage: "./src/Utils/pages/appAndroid/loginApp_page.js",
-    homeAppPage: "./src/Utils/pages/appAndroid/homeApp_page.js",
-    productAppPage: "./src/Utils/pages/appAndroid/productApp_page.js",
-    cartAppPage: "./src/Utils/pages/appAndroid/cartApp_page.js",
-    loginWebPage: "./src/Utils/pages/webAndroid/loginWeb_page.js",
-    homeWebPage: "./src/Utils/pages/webAndroid/homeWeb_page.js",
-    productWebPage: "./src/Utils/pages/webAndroid/productWeb_page.js",
-    cartWebPage: "./src/Utils/pages/webAndroid/cartWeb_page.js",
-    qaConfig: "./src/configs/qa.js",
+    I: './steps_file.js',
+    loginAppPage: './src/Utils/pages/appAndroid/loginApp_page.js',
+    homeAppPage: './src/Utils/pages/appAndroid/homeApp_page.js',
+    productAppPage: './src/Utils/pages/appAndroid/productApp_page.js',
+    cartAppPage: './src/Utils/pages/appAndroid/cartApp_page.js',
+    loginWebPage: './src/Utils/pages/webAndroid/loginWeb_page.js',
+    homeWebPage: './src/Utils/pages/webAndroid/homeWeb_page.js',
+    productWebPage: './src/Utils/pages/webAndroid/productWeb_page.js',
+    cartWebPage: './src/Utils/pages/webAndroid/cartWeb_page.js',
+    qaConfig: './src/configs/qa.js'
   },
   mocha: {},
   bootstrap: null,
@@ -47,42 +47,42 @@ exports.config = {
   // },
   plugins: {
     screenshotOnFail: {
-      enabled: true,
+      enabled: true
     },
     retryFailedStep: {
-      enabled: true,
+      enabled: true
     },
     allure: {
       enabled: true,
-      require: "@codeceptjs/allure-legacy",
+      require: '@codeceptjs/allure-legacy'
     },
     stepByStepReport: {
       enabled: true,
-      screenshotsForAllureReport: true,
+      screenshotsForAllureReport: true
     },
     tryTo: {
-      enabled: true,
+      enabled: true
     },
     retryTo: {
-      enabled: true,
+      enabled: true
     },
     eachElement: {
-      enabled: true,
+      enabled: true
     },
-    pauseOnFail: {},
+    pauseOnFail: {}
   },
   stepTimeout: 0,
   stepTimeoutOverride: [
     {
-      pattern: "wait.*",
-      timeout: 0,
+      pattern: 'wait.*',
+      timeout: 0
     },
     {
-      pattern: "amOnPage",
-      timeout: 0,
-    },
+      pattern: 'amOnPage',
+      timeout: 0
+    }
   ],
-  name: "mobile-automation",
-  tests: "./src/steps/web_test.js",
+  name: 'mobile-automation',
+  tests: './src/steps/web_test.js'
   // tests: "./src/steps/app_test.js",
-};
+}
