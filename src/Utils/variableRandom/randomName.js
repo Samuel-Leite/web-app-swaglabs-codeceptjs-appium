@@ -1,12 +1,12 @@
-var random_name = require("node-random-name");
+const randomName = require('node-random-name')
 
 const getFirstName = () => {
-  return random_name({ first: true });
-};
+  return randomName({ first: true })
+}
 
 const getLastName = () => {
-  return random_name({ last: true });
-};
+  return randomName({ last: true })
+}
 
-exports.getFirstName = getFirstName;
-exports.getLastName = getLastName;
+exports.getFirstName = getFirstName
+exports.getLastName = getLastName

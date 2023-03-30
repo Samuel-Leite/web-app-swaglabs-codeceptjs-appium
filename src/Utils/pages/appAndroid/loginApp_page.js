@@ -1,27 +1,28 @@
-const { I } = inject();
+/* eslint-disable no-undef */
+const { I } = inject()
 
 module.exports = {
   fields: {
-    userName: "~test-Username",
-    password: "~test-Password",
+    userName: '~test-Username',
+    password: '~test-Password'
   },
 
   button: {
-    enter: "~test-LOGIN",
+    enter: '~test-LOGIN'
   },
 
   loginApp(userName, password) {
-    I.waitForElement(this.fields.userName, 3);
-    I.fillField(this.fields.userName, userName);
-    I.fillField(this.fields.password, password);
-    I.tap(this.button.enter);
+    I.waitForElement(this.fields.userName, 3)
+    I.fillField(this.fields.userName, userName)
+    I.fillField(this.fields.password, password)
+    I.tap(this.button.enter)
   },
 
   fieldUserName() {
     try {
-      ("~test-Username");
+      ;('~test-Username')
     } catch {
-      ('//input[@id = "user-name"]');
+      ;('//input[@id = "user-name"]')
     }
-  },
-};
+  }
+}

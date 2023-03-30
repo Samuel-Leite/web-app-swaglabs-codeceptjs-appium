@@ -4,16 +4,34 @@
   "description": "Projeto de testes automatizados",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
+    "precommit": "git add . ",
+    "commit": "git cz && node .husky/push.js",
     "test": "npx codeceptjs run --steps",
     "app": "npx codeceptjs run --steps PLATFORM=Android APP='c:\\Users\\slle\\OneDrive - GFT Technologies SE\\Desktop\\Samuel Leite\\AutomationProject\\Mobile\\app\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk' DEVICE=android_device VERSION=9 PACKAGE=com.swaglabsmobileapp ACTIVITY=MainActivity",
-    "web": "npx codeceptjs run '{  codecept.conf.js    \"helpers\": {\"Appium\": { \"platform\": \"Android\", \"desiredCapabilities\": { \"deviceName\": \"pixel\", \"platformVersion\": \"9\", \"automationName\": \"UiAutomator2\", \"browserName\": \"Chrome\" }}}} ' "
+    "web": "npx codeceptjs run '{  codecept.conf.js    \"helpers\": {\"Appium\": { \"platform\": \"Android\", \"desiredCapabilities\": { \"deviceName\": \"pixel\", \"platformVersion\": \"9\", \"automationName\": \"UiAutomator2\", \"browserName\": \"Chrome\" }}}} ' ",
+    "lint": "eslint src --max-warnings=0"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npx lint --fix"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "codeceptjs": "^3.3.7",
+    "codeceptjs": "^3.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
     "node-random-name": "^1.0.1",
+    "prettier": "^2.8.7",
     "random-number": "^0.0.9",
-    "webdriverio": "^8.2.1"
+    "webdriverio": "^8.6.9"
+  },
+  "devDependencies": {
+    "@codeceptjs/allure-legacy": "^1.0.2",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.2.0"
   }
 }

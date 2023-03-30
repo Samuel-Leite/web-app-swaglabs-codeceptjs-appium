@@ -1,13 +1,13 @@
-var randomCode = require("random-number");
+const randomCode = require('random-number')
 
 const getCode = () => {
-  var options = {
+  const options = {
     min: 10000,
     max: 99999,
-    integer: true,
-  };
+    integer: true
+  }
 
-  return randomCode(options);
-};
+  return randomCode(options)
+}
 
-exports.getCode = getCode;
+exports.getCode = getCode

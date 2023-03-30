@@ -38,13 +38,13 @@ exports.config = {
   timeout: null,
   teardown: null,
   hooks: [],
-  gherkin: {
-    // features: './src/features/appTest.feature',
-    // steps: ['./src/step_definitions/app_steps.js']
+  // gherkin: {
+  //   features: './src/features/appTest.feature',
+  //   steps: ['./src/step_definitions/app_steps.js']
 
-    features: "./src/features/webTest.feature",
-    steps: ["./src/step_definitions/web_steps.js"],
-  },
+  //   features: "./src/features/webTest.feature",
+  //   steps: ["./src/step_definitions/web_steps.js"],
+  // },
   plugins: {
     screenshotOnFail: {
       enabled: true,
@@ -54,6 +54,7 @@ exports.config = {
     },
     allure: {
       enabled: true,
+      require: "@codeceptjs/allure-legacy",
     },
     stepByStepReport: {
       enabled: true,
@@ -82,6 +83,6 @@ exports.config = {
     },
   ],
   name: "mobile-automation",
-  // tests: "./src/steps/web_test.js",
+  tests: "./src/steps/web_test.js",
   // tests: "./src/steps/app_test.js",
 };
