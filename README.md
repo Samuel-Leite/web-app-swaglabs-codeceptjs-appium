@@ -7,37 +7,43 @@ VS Code
 
 ## Estrutura do Projeto
 
-./features/appTest.feature:
-Constam os cenários de testes no Aplicativo Mobile escritos em BDD para execução
-
-./features/webTest.feature:
-Constam os cenários de testes WEB Mobile escritos em BDD para execução
+./.husky:
+Configurações do Husky
 
 ./output:
 Evidências da execução dos testes
 
-./pages/appAndroid:
-Responsável pelos mapeamento do Aplicativo Mobile
+./src/configs/qa.js:
+Constam as credenciais concernentes a automação
 
-./pages/webAndroid:
-Responsável pelos mapeamento da WEB Mobile
+./src/features/appTest.feature:
+Constam os cenários de testes no Aplicativo Mobile escritos em BDD para execução
 
-./step_definitions/app_steps:
+./src/features/webTest.feature:
+Constam os cenários de testes WEB Mobile escritos em BDD para execução
+
+./src/step_definitions/app_steps:
 Responsável pelos steps do Aplicativo Mobile versus BDD
 
-./step_definitions/web_steps:
+./src/step_definitions/web_steps:
 Responsável pelos steps da WEB Mobile versus BDD
 
-./steps/app_test.js:
+./src/steps/app_test.js:
 Constam os cenários de testes do Aplicativo Mobile para execução sem BDD
 
-./steps/web_test.js:
+./src/steps/web_test.js:
 Constam os cenários de testes da WB Mobile para execução sem BDD
 
-./Utils/code.js:
+./src/Utils/pages/appAndroid:
+Responsável pelos mapeamento do Aplicativo Mobile
+
+./src/Utils/pages/webAndroid:
+Responsável pelos mapeamento da WEB Mobile
+
+./src/Utils/variableRandom/randomName.js:
 Responsável por gerar números randômicos durante a execução dos testes
 
-./Utils/name.js:
+./src/Utils/variableRandom/randomNumber.js:
 Responsável por gerar nomes randômicos durante a execução dos testes
 
 # Observações:
@@ -116,6 +122,16 @@ npm install --save-dev eslint-plugin-prettier
 npm install --save-dev eslint-plugin-prettier eslint-config-prettier
 npm install --save-dev lint-staged
 
+OBS.: Após executar os comandos acima, copiar as pastas: .eslintignore, .eslintrc.js, .prettierignore, .prettierrc e adicionar comandos na pasta package.json:
+"scripts": {
+"lint": "eslint src --max-warnings=0"
+},
+"lint-staged": {
+"src/\*_/_": [
+"npx lint --fix"
+]
+},
+
 ## Instalação do Husky
 
 npm install husky --save-dev
@@ -123,4 +139,9 @@ npm install -g git-cz
 npm install commitizen -g --force
 npm install --save-dev git-cz
 
-Obs.: Copiar a pasta .husky, changelog.config.js e adicionar comandos na pasta package.json
+OBS.: Copiar as pastas: .husky, changelog.config.js e adicionar comandos na pasta package.json:
+"scripts": {
+"prepare": "husky install",
+"precommit": "git add . ",
+"commit": "git cz && node .husky/push.js",
+},
