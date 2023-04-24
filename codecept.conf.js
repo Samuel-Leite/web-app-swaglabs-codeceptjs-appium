@@ -1,16 +1,17 @@
+/* eslint-disable no-dupe-keys */
 exports.config = {
   output: './output',
   helpers: {
-    // Appium: {
-    //   platform: "Android",
-    //   app: "C:/Users/slle/OneDrive - GFT Technologies SE/Desktop/Samuel Leite/AutomationProject/Mobile/app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk",
-    //   desiredCapabilities: {
-    //     appPackage: "com.swaglabsmobileapp",
-    //     appActivity: "MainActivity",
-    //     deviceName: "pixel",
-    //     platformVersion: "9",
-    //   },
-    // },
+    Appium: {
+      platform: 'Android',
+      app: 'C:/Users/slle/OneDrive - GFT Technologies SE/Desktop/Samuel Leite/AutomationProject/Mobile/app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk',
+      desiredCapabilities: {
+        appPackage: 'com.swaglabsmobileapp',
+        appActivity: 'MainActivity',
+        deviceName: 'pixel',
+        platformVersion: '9'
+      }
+    },
     Appium: {
       platform: 'Android',
       desiredCapabilities: {
