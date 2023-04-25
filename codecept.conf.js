@@ -11,16 +11,16 @@ exports.config = {
         deviceName: 'pixel',
         platformVersion: '9'
       }
-    },
-    Appium: {
-      platform: 'Android',
-      desiredCapabilities: {
-        deviceName: 'pixel',
-        platformVersion: '9',
-        automationName: 'UiAutomator2',
-        browserName: 'Chrome'
-      }
     }
+    // Appium: {
+    //   platform: 'Android',
+    //   desiredCapabilities: {
+    //     deviceName: 'pixel',
+    //     platformVersion: '9',
+    //     automationName: 'UiAutomator2',
+    //     browserName: 'Chrome'
+    //   }
+    // }
   },
   include: {
     I: './steps_file.js',
@@ -84,6 +84,6 @@ exports.config = {
     }
   ],
   name: 'mobile-automation',
-  tests: './src/steps/web_test.js'
-  // tests: './src/steps/app_test.js'
+  // tests: './src/steps/web_test.js'
+  tests: './src/steps/app_test.js'
 }

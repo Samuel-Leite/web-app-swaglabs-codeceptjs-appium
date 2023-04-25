@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-Feature('buy produts')
+Feature('Buy produts via mobile web')
 
 // variable global
 const { I, loginWebPage, homeWebPage, productWebPage, cartWebPage, qaConfig } = inject()
