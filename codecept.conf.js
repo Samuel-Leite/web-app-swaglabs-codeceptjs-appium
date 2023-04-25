@@ -85,5 +85,5 @@ exports.config = {
   ],
   name: 'mobile-automation',
   tests: './src/steps/web_test.js'
-  // tests: "./src/steps/app_test.js",
+  // tests: './src/steps/app_test.js'
 }
