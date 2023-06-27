@@ -24,15 +24,14 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    loginAppPage: './src/Utils/pages/appAndroid/loginApp_page.js',
-    homeAppPage: './src/Utils/pages/appAndroid/homeApp_page.js',
-    productAppPage: './src/Utils/pages/appAndroid/productApp_page.js',
-    cartAppPage: './src/Utils/pages/appAndroid/cartApp_page.js',
-    loginWebPage: './src/Utils/pages/webAndroid/loginWeb_page.js',
-    homeWebPage: './src/Utils/pages/webAndroid/homeWeb_page.js',
-    productWebPage: './src/Utils/pages/webAndroid/productWeb_page.js',
-    cartWebPage: './src/Utils/pages/webAndroid/cartWeb_page.js',
-    qaConfig: './src/configs/qa.js'
+    loginAppPage: './tests/pages/appAndroid/loginApp_page.js',
+    homeAppPage: './tests/pages/appAndroid/homeApp_page.js',
+    productAppPage: './tests/pages/appAndroid/productApp_page.js',
+    cartAppPage: './tests/pages/appAndroid/cartApp_page.js',
+    loginWebPage: './tests/pages/webAndroid/loginWeb_page.js',
+    homeWebPage: './tests/pages/webAndroid/homeWeb_page.js',
+    productWebPage: './tests/pages/webAndroid/productWeb_page.js',
+    cartWebPage: './tests/pages/webAndroid/cartWeb_page.js'
   },
   mocha: {},
   bootstrap: null,
@@ -40,11 +39,11 @@ exports.config = {
   teardown: null,
   hooks: [],
   // gherkin: {
-  //   features: './src/features/appTest.feature',
-  //   steps: ['./src/step_definitions/app_steps.js']
+  //   features: './tests/features/appTest.feature',
+  //   steps: ['./tests/step_definitions/app_steps.js']
 
-  //   features: "./src/features/webTest.feature",
-  //   steps: ["./src/step_definitions/web_steps.js"],
+  //   features: './tests/features/webTest.feature',
+  //   steps: ['./tests/step_definitions/web_steps.js']
   // },
   plugins: {
     screenshotOnFail: {
@@ -84,6 +83,6 @@ exports.config = {
     }
   ],
   name: 'mobile-automation',
-  // tests: './src/steps/web_test.js'
-  tests: './src/steps/app_test.js'
+  // tests: './tests/steps/web_test.js'
+  tests: './tests/steps/app_test.js'
 }

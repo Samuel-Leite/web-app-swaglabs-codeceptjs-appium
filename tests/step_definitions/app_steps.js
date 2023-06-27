@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 // variable global
-const { loginAppPage, homeAppPage, productAppPage } = inject()
-const name = require('../Utils/variableRandom/randomName')
-const code = require('../Utils/variableRandom/randomNumber')
+const { loginAppPage, homeAppPage, productAppPage, cartAppPage } = inject()
+const name = require('../../helpers/utils')
+const code = require('../../helpers/utils')
 
 require('dotenv').config()
 
