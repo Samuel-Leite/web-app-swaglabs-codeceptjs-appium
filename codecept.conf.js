@@ -1,17 +1,27 @@
+/* eslint-disable import/no-dynamic-require */
+const path = require('path')
+require('dotenv').config({ path: '.env' })
+
+const capabilities = require(`./resources/conf/${[process.env.MODE]}/caps.json`)[process.env.CAPS]
+
 /* eslint-disable no-dupe-keys */
 exports.config = {
   output: './output',
   helpers: {
-    Appium: {
-      platform: 'Android',
-      app: 'C:/Users/slle/OneDrive - GFT Technologies SE/Desktop/Samuel Leite/AutomationProject/Mobile/app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk',
-      desiredCapabilities: {
-        appPackage: 'com.swaglabsmobileapp',
-        appActivity: 'MainActivity',
-        deviceName: 'pixel',
-        platformVersion: '9'
-      }
-    }
+    Appium:
+      process.env.MODE === 'phone'
+        ? // Phone
+          {
+            app: path.join(__dirname, '/resources/app', process.env.APP),
+            platform: capabilities.platformName,
+            capabilities
+          }
+        : // Tablet
+          {
+            app: path.join(__dirname, '/resources/app', process.env.APP),
+            platform: capabilities.platformName,
+            capabilities
+          }
     // Appium: {
     //   platform: 'Android',
     //   desiredCapabilities: {

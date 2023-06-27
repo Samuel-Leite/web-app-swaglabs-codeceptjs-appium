@@ -1,0 +1,9 @@
+{
+    "nexusTablet": {
+        "platformName": "Nexus",
+        "deviceName": "tablet ",
+        "platformVersion": "9",
+        "appPackage": "com.swaglabsmobileapp",
+        "appActivity": "MainActivity"
+    }
+}
