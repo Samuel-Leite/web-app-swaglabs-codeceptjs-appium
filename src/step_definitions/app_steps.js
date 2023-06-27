@@ -1,15 +1,17 @@
 /* eslint-disable no-undef */
 // variable global
-const { loginAppPage, homeAppPage, productAppPage, qaConfig } = inject()
+const { loginAppPage, homeAppPage, productAppPage } = inject()
 const name = require('../Utils/variableRandom/randomName')
 const code = require('../Utils/variableRandom/randomNumber')
+
+require('dotenv').config()
 
 const firstName = name.getFirstName()
 const lastName = name.getLastName()
 const postalCode = code.getCode()
 
 Given('that I am logged into the SwagLabs app', () => {
-  loginAppPage.loginApp(qaConfig.swagLabs.credencials.valid, qaConfig.swagLabs.passwords.valid)
+  loginAppPage.loginApp(process.env.USER, process.env.PASSWORD)
   homeAppPage.checkLoginSuccess()
 })
 

@@ -2,16 +2,18 @@
 Feature('Buy produts via mobile app')
 
 // variable global
-const { loginAppPage, homeAppPage, productAppPage, cartAppPage, qaConfig } = inject()
-const name = require('../Utils/variableRandom/randomName')
-const code = require('../Utils/variableRandom/randomNumber')
+const { loginAppPage, homeAppPage, productAppPage, cartAppPage } = inject()
+const name = require('../../helpers/utils')
+const code = require('../../helpers/utils')
+
+require('dotenv').config()
 
 const firstName = name.getFirstName()
 const lastName = name.getLastName()
 const postalCode = code.getCode()
 
 Before(() => {
-  loginAppPage.loginApp(qaConfig.swagLabs.credencials.valid, qaConfig.swagLabs.passwords.valid)
+  loginAppPage.loginApp(process.env.USER, process.env.PASSWORD)
   homeAppPage.checkLoginSuccess()
   homeAppPage.selectToggle()
 })
