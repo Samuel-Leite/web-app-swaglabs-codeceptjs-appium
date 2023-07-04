@@ -22,15 +22,6 @@ exports.config = {
             platform: capabilities.platformName,
             capabilities
           },
-    // Appium: {
-    //   platform: 'Android',
-    //   desiredCapabilities: {
-    //     deviceName: 'pixel',
-    //     platformVersion: '9',
-    //     automationName: 'UiAutomator2',
-    //     browserName: 'Chrome'
-    //   }
-    // }
     Hooks: {
       require: './helpers/Hooks.js'
     }
@@ -59,9 +50,6 @@ exports.config = {
   //   steps: ['./tests/step_definitions/web_steps.js']
   // },
   plugins: {
-    screenshotOnFail: {
-      enabled: true
-    },
     retryFailedStep: {
       enabled: true
     },
@@ -71,7 +59,15 @@ exports.config = {
     },
     stepByStepReport: {
       enabled: true,
-      screenshotsForAllureReport: true
+      screenshotsForAllureReport: true,
+      ignoreSteps: ['grab*'],
+      output: './output',
+      deleteSuccessful: false,
+      disableScreenshotOnFail: false
+    },
+    // Habilitar o ultimo print em caso de falha
+    screenshotOnFail: {
+      enabled: true
     },
     tryTo: {
       enabled: true
