@@ -1,9 +1,9 @@
 {
-    "android9": {
+    "android": {
         "platformName": "Android",
         "deviceName": "pixel",
         "platformVersion": "9",
-        "appPackage": "com.swaglabsmobileapp",
-        "appActivity": "MainActivity"
+        "automationName": "UiAutomator2",
+        "browserName": "Chrome"
     }
 }

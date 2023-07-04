@@ -9,19 +9,19 @@ exports.config = {
   output: './output',
   helpers: {
     Appium:
-      process.env.MODE === 'phone'
-        ? // Phone
+      process.env.MODE === 'mobile'
+        ? // Mobile App
           {
             app: path.join(__dirname, '/resources/app', process.env.APP),
             platform: capabilities.platformName,
             capabilities
           }
-        : // Tablet
+        : // Mobile Web
           {
             app: path.join(__dirname, '/resources/app', process.env.APP),
             platform: capabilities.platformName,
             capabilities
-          }
+          },
     // Appium: {
     //   platform: 'Android',
     //   desiredCapabilities: {
@@ -31,6 +31,9 @@ exports.config = {
     //     browserName: 'Chrome'
     //   }
     // }
+    Hooks: {
+      require: './helpers/Hooks.js'
+    }
   },
   include: {
     I: './steps_file.js',
@@ -92,7 +95,7 @@ exports.config = {
       timeout: 0
     }
   ],
-  name: 'mobile-automation',
+  name: 'mobile-automation'
   // tests: './tests/steps/web_test.js'
-  tests: './tests/steps/app_test.js'
+  // tests: './tests/steps/app_test.js'
 }
