@@ -23,11 +23,11 @@ exports.config = {
             capabilities
           },
     Hooks: {
-      require: './helpers/Hooks.js'
+      require: './helpers/hooks.js'
     }
   },
   include: {
-    I: './steps_file.js',
+    I: './helpers/commands.js',
     loginAppPage: './tests/pages/appAndroid/loginApp_page.js',
     homeAppPage: './tests/pages/appAndroid/homeApp_page.js',
     productAppPage: './tests/pages/appAndroid/productApp_page.js',
@@ -92,6 +92,4 @@ exports.config = {
     }
   ],
   name: 'mobile-automation'
-  // tests: './tests/steps/web_test.js'
-  // tests: './tests/steps/app_test.js'
 }
