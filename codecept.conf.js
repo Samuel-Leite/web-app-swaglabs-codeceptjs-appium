@@ -9,14 +9,14 @@ exports.config = {
   output: './output',
   helpers: {
     Appium:
-      process.env.MODE === 'mobile'
-        ? // Mobile App
+      process.env.MODE === 'local'
+        ? // Local
           {
             app: path.join(__dirname, '/resources/app', process.env.APP),
             platform: capabilities.platformName,
             capabilities
           }
-        : // Mobile Web
+        : // Remote
           {
             app: path.join(__dirname, '/resources/app', process.env.APP),
             platform: capabilities.platformName,
