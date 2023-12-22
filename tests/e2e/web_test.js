@@ -28,7 +28,7 @@ After(() => {
 
 Scenario('Buy Sauce Labs Backpack by web with success', () => {
   productWebPage.addBackpackToCart()
-})
+}).tag('wip')
 
 Scenario('Buy Sauce Labs Bike Light by web with success', () => {
   productWebPage.addBikeLightToCart()

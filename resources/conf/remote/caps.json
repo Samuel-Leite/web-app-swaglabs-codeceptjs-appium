@@ -1,9 +1,10 @@
 {
-    "android": {
-        "platformName": "Android",
-        "deviceName": "pixel",
-        "platformVersion": "9",
-        "automationName": "UiAutomator2",
-        "browserName": "Chrome"
+    "galaxyS21": {
+        "platformName": "ANDROID",
+        "realMobile": "true",
+        "device": "Samsung Galaxy S21",
+        "os_version": "11",
+        "browserName": "chrome",
+        "automationName": "UiAutomator2"
     }
 }

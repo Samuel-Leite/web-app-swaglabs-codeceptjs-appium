@@ -18,9 +18,12 @@ exports.config = {
           }
         : // Remote
           {
-            app: path.join(__dirname, '/resources/app', process.env.APP),
+            host: 'hub-cloud.browserstack.com',
+            port: 4444,
+            user: 'samuelleite_GtpoxN',
+            key: 'sYCp8ma8kXSd4DoH6mAY',
             platform: capabilities.platformName,
-            capabilities
+            desiredCapabilities: capabilities
           },
     Hooks: {
       require: './helpers/hooks.js'

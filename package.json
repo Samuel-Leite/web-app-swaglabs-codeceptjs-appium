@@ -10,6 +10,7 @@
     "test": "npx codeceptjs run --steps",
     "app": "npx codeceptjs run ./tests/e2e/app_test.js && allure serve output",
     "web": "npx codeceptjs run ./tests/e2e/web_test.js && allure serve output",
+    "tag": "npx codeceptjs run ./tests/e2e/*_test.js --grep",
     "lint": "eslint src --max-warnings=0"
   },
   "lint-staged": {
