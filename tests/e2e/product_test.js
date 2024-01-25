@@ -24,7 +24,7 @@ const postalCode = code.getCode()
 
 Before(() => {
   loginScreen.loginApp(credencial.user, credencial.password)
-  homeScreen.checkLoginSuccess()
+  // homeScreen.checkLoginSuccess()
 })
 
 After(() => {

@@ -1,7 +1,19 @@
-/* eslint-disable import/no-dynamic-require */
+/* eslint-disable import/no-extraneous-dependencies */
+const path = require('path')
+const fs = require('fs')
+const yaml = require('js-yaml')
 require('dotenv').config({ path: '.env' })
 
-const capabilities = require(`./resources/conf/${[process.env.MODE]}/caps.json`)[process.env.CAPS]
+const capsPath = path.join(__dirname, `./resources/conf/${process.env.MODE}/caps.yml`)
+
+// Verificar se o arquivo existe
+if (!fs.existsSync(capsPath)) {
+  console.error('Arquivo caps.yml não encontrado.')
+  process.exit(1) // Encerrar o processo se o arquivo não for encontrado
+}
+
+// Carregar o conteúdo do arquivo YAML usando yaml.load
+const capabilities = yaml.load(fs.readFileSync(capsPath, 'utf8'))
 
 /* eslint-disable no-dupe-keys */
 exports.config = {
@@ -11,8 +23,8 @@ exports.config = {
       process.env.MODE === 'local'
         ? // Local
           {
-            platform: capabilities.platformName,
-            capabilities
+            platform: capabilities[process.env.CAPS].platformName,
+            capabilities: capabilities[process.env.CAPS]
           }
         : // Remote
           {
@@ -20,8 +32,8 @@ exports.config = {
             port: 4444,
             user: process.env.BS_USER,
             key: process.env.BS_KEY,
-            platform: capabilities.platformName,
-            desiredCapabilities: capabilities
+            platform: capabilities[process.env.CAPS].platformName,
+            desiredCapabilities: capabilities[process.env.CAPS]
           },
     Hooks: {
       require: './helpers/hooks.js'
@@ -39,10 +51,10 @@ exports.config = {
   timeout: null,
   teardown: null,
   hooks: [],
-  // gherkin: {
-  //   features: './tests/features/webTest.feature',
-  //   steps: ['./tests/step_definitions/product_steps.js']
-  // },
+  gherkin: {
+    features: './tests/features/webTest.feature',
+    steps: ['./tests/step_definitions/product_steps.js']
+  },
   plugins: {
     retryFailedStep: {
       enabled: true
