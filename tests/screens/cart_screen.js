@@ -18,7 +18,7 @@ module.exports = {
   },
 
   message: {
-    paymentSuccess: '//*[contains(text(),"Thank you for your order!")]'
+    paymentSuccess: 'Thank you for your order!'
   },
 
   checkoutProduct() {
@@ -62,8 +62,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.waitForElement(this.message.paymentSuccess)
-    I.seeElement(this.message.paymentSuccess)
+    I.see(this.message.paymentSuccess)
     I.wait(3)
   }
 }
