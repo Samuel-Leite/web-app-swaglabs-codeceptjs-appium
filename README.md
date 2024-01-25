@@ -14,7 +14,6 @@ Através do framework CodeceptJS + Appium, o projeto utilizou a plataforma SwagL
 - CodeceptJS + Appium
 - Appium Desktop
 - Emuladores: Android Studio e BrowserStack (BS)
-- Appium Inspector
 - JavaScript
 - Allure Report
 
@@ -35,9 +34,6 @@ MODE='remote'
 
 # Informar o dispositivo que será executado com o respectivo capabilitys ./resoluces/conf/*/caps.json
 CAPS='galaxyS21'
-
-# Nome do aplicativo a ser executado no Android Studio que está salvo no './resources/app/*.apk'
-APP='nome_do_aplicativo'
 
 # Usuário e senha de conexão com BrowserStack
 BS_USER='nome_usuario'
@@ -90,13 +86,11 @@ Segue vídeo evidenciando a execução do cenário de teste através do BrowserS
 - Dispositivo: Xiaomi Redmi Note 11,
 - Sistema Operacional: Android 11.0.
 
-https://github.com/Samuel-Leite/app-swaglabs-codeceptjs-appium/assets/74505293/a75810fd-eff4-4d2a-a87e-ef5811af91fc
+
 
 ## 🔗 Links para Apoio:
 
 - [CodeceptJs Appium](https://codecept.io/helpers/Appium.html)
 - [Capabilitys do BrowserStack](https://www.browserstack.com/app-automate/capabilities?tag=w3c)
 - [Ações de toque do Appium no CodeceptJS](https://sandeepqaops.medium.com/appium-touch-actions-in-codeceptjs-double-tap-press-long-press-drag-and-drop-etc-390b0edca65d)
-- [Download do Appium Inspector](https://github.com/appium/appium-inspector/releases)
 - [Download do Appium Desktop](https://github.com/appium/appium-desktop/releases)
-- [Download do APK Sauce Labs utilizado no projeto](https://github.com/saucelabs/sample-app-mobile/releases/tag/2.7.1)
