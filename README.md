@@ -86,7 +86,7 @@ Segue vídeo evidenciando a execução do cenário de teste através do BrowserS
 - Dispositivo: Xiaomi Redmi Note 11,
 - Sistema Operacional: Android 11.0.
 
-
+https://github.com/Samuel-Leite/web-app-swaglabs-codeceptjs-appium/assets/74505293/cbe4340e-48e7-48b8-adb0-0a0afd071bf1
 
 ## 🔗 Links para Apoio:
 
