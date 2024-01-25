@@ -18,7 +18,6 @@ class hooks extends Helper {
     console.log('******* Variáveis de Ambiente *******')
     console.log(`MODE: ${process.env.MODE}`)
     console.log(`CAPS: ${process.env.CAPS}`)
-    console.log(`APP file: ${process.env.APP}`)
     console.log('*************************************')
     try {
       rimraf.sync('output/')
