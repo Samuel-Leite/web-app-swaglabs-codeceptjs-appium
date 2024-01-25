@@ -1,5 +1,4 @@
 /* eslint-disable import/no-dynamic-require */
-const path = require('path')
 require('dotenv').config({ path: '.env' })
 
 const capabilities = require(`./resources/conf/${[process.env.MODE]}/caps.json`)[process.env.CAPS]
@@ -12,7 +11,6 @@ exports.config = {
       process.env.MODE === 'local'
         ? // Local
           {
-            app: path.join(__dirname, '/resources/app', process.env.APP),
             platform: capabilities.platformName,
             capabilities
           }
@@ -42,11 +40,8 @@ exports.config = {
   teardown: null,
   hooks: [],
   // gherkin: {
-  //   features: './tests/features/appTest.feature',
-  //   steps: ['./tests/step_definitions/app_steps.js']
-
   //   features: './tests/features/webTest.feature',
-  //   steps: ['./tests/step_definitions/web_steps.js']
+  //   steps: ['./tests/step_definitions/product_steps.js']
   // },
   plugins: {
     retryFailedStep: {
