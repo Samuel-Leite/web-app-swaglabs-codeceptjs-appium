@@ -1,11 +1,20 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 Feature('Buy produts via mobile web')
+
+const fs = require('fs')
+const path = require('path') // Importe o módulo 'path'
+const yaml = require('js-yaml')
 
 // variable global
 const { loginScreen, homeScreen, productScreen, cartScreen } = inject()
 const name = require('../../helpers/utils')
 const code = require('../../helpers/utils')
+
+// Carrega as credenciais do arquivo YAML
+const credencialPath = path.resolve(__dirname, '../../resources/data/credencial.yml')
+const credencial = yaml.load(fs.readFileSync(credencialPath, 'utf8'))
 
 require('dotenv').config()
 
@@ -14,7 +23,7 @@ const lastName = name.getLastName()
 const postalCode = code.getCode()
 
 Before(() => {
-  loginScreen.loginApp(process.env.USER, process.env.PASSWORD)
+  loginScreen.loginApp(credencial.user, credencial.password)
   homeScreen.checkLoginSuccess()
 })
 
