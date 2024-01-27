@@ -1,8 +1,19 @@
-/* eslint-disable import/no-dynamic-require */
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path')
+const fs = require('fs')
+const yaml = require('js-yaml')
 require('dotenv').config({ path: '.env' })
 
-const capabilities = require(`./resources/conf/${[process.env.MODE]}/caps.json`)[process.env.CAPS]
+const capsPath = path.join(__dirname, `./resources/conf/${process.env.MODE}/caps.yml`)
+
+// Verificar se o arquivo existe
+if (!fs.existsSync(capsPath)) {
+  console.error('Arquivo caps.yml não encontrado.')
+  process.exit(1) // Encerrar o processo se o arquivo não for encontrado
+}
+
+// Carregar o conteúdo do arquivo YAML usando yaml.load
+const capabilities = yaml.load(fs.readFileSync(capsPath, 'utf8'))
 
 /* eslint-disable no-dupe-keys */
 exports.config = {
@@ -12,18 +23,17 @@ exports.config = {
       process.env.MODE === 'local'
         ? // Local
           {
-            app: path.join(__dirname, '/resources/app', process.env.APP),
-            platform: capabilities.platformName,
-            capabilities
+            platform: capabilities[process.env.CAPS].platformName,
+            capabilities: capabilities[process.env.CAPS]
           }
         : // Remote
           {
             host: 'hub-cloud.browserstack.com',
             port: 4444,
-            user: 'samuelleite_GtpoxN',
-            key: 'sYCp8ma8kXSd4DoH6mAY',
-            platform: capabilities.platformName,
-            desiredCapabilities: capabilities
+            user: process.env.BS_USER,
+            key: process.env.BS_KEY,
+            platform: capabilities[process.env.CAPS].platformName,
+            desiredCapabilities: capabilities[process.env.CAPS]
           },
     Hooks: {
       require: './helpers/hooks.js'
@@ -31,34 +41,28 @@ exports.config = {
   },
   include: {
     I: './helpers/commands.js',
-    loginAppPage: './tests/pages/appAndroid/loginApp_page.js',
-    homeAppPage: './tests/pages/appAndroid/homeApp_page.js',
-    productAppPage: './tests/pages/appAndroid/productApp_page.js',
-    cartAppPage: './tests/pages/appAndroid/cartApp_page.js',
-    loginWebPage: './tests/pages/webAndroid/loginWeb_page.js',
-    homeWebPage: './tests/pages/webAndroid/homeWeb_page.js',
-    productWebPage: './tests/pages/webAndroid/productWeb_page.js',
-    cartWebPage: './tests/pages/webAndroid/cartWeb_page.js'
+    loginScreen: './tests/screens/login_screen.js',
+    homeScreen: './tests/screens/home_screen.js',
+    productScreen: './tests/screens/product_screen.js',
+    cartScreen: './tests/screens/cart_screen.js'
   },
   mocha: {},
   bootstrap: null,
   timeout: null,
   teardown: null,
   hooks: [],
-  // gherkin: {
-  //   features: './tests/features/appTest.feature',
-  //   steps: ['./tests/step_definitions/app_steps.js']
-
-  //   features: './tests/features/webTest.feature',
-  //   steps: ['./tests/step_definitions/web_steps.js']
-  // },
+  gherkin: {
+    features: './tests/features/webTest.feature',
+    steps: ['./tests/step_definitions/product_steps.js']
+  },
   plugins: {
     retryFailedStep: {
       enabled: true
     },
     allure: {
       enabled: true,
-      require: '@codeceptjs/allure-legacy'
+      require: '@codeceptjs/allure-legacy',
+      outputDir: './output'
     },
     stepByStepReport: {
       enabled: true,

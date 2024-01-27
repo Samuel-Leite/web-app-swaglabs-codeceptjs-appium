@@ -1,23 +1,96 @@
-# Projeto de automação mobile com CodeceptJS
+# Automação mobile E2E com framework CodeceptJS
 
-Projeto de automação de aplicações web utilizando framework CodeceptJS e Appium. A automação utilizou o aplicativo do Swag Labs aplicando automação com códigos, BDD, variáveis ​​aleatórias, e outras configurações contemplando as boas práticas do mercado.
+![logo-PhotoRoom png-PhotoRoom](https://github.com/Samuel-Leite/app-swaglabs-codeceptjs-appium/assets/74505293/c107fa6b-e60c-45ae-8d91-c232a8cbe849)
 
-Faça o donwload do template no repositório de código para utilizar no seu projeto em especifico, feito isso, fique a vontande para usufruir dos recursos disponíveis e também customizar de acordo com sua necessidade.
+## 🚀 Introdução:
 
-# Pré-Requisitos:
+Através do framework CodeceptJS + Appium, o projeto utilizou a plataforma SwagLabs para realizar automação de testes E2E contemplando as configurações: gherkin, variáveis randômicas, husky, allure report e outros visando as boas práticas do mercado.
 
-Java 11 JDK,
-VS Code
-Node.js
+## 💻 Tecnologias:
 
-## Estrutura do Projeto
+- VS Code
+- Node.js
+- Java 11
+- CodeceptJS + Appium
+- Appium Desktop
+- Emuladores: Android Studio e BrowserStack (BS)
+- JavaScript
+- Allure Report
 
-./.husky: Configurações do Husky
+## 🤖 Instalação e configuração:
 
-./helpers: Pasta que contém Hooks assim como Utils contemplando funções genéricas para gerar dados randômicos
+- Clonar o projeto na máquina local
+- Executar no terminal do projeto automação o comando:
 
-./resource: Pasta que contem o arquivo APK do aplicativo assim como as configurações dos dispositivos
+```
+'npm install'
+```
 
-./tests: Pasta em que contém as features, pages e as steps concernentes aos testes
+- Informar os dados no arquivo dotEnv com o modelo do dispositivo que será executado e as credenciais do BrowserStack, segue o modelo:
 
-./.env: Arquivo com as variáveis globais
+```
+# Informar se será executado local (Android Studio) ou remote (BrowserStack)
+MODE='remote'
+
+# Informar o dispositivo que será executado com o respectivo capabilitys ./resoluces/conf/*/caps.json
+CAPS='galaxyS21'
+
+# Usuário e senha de conexão com BrowserStack
+BS_USER='nome_usuario'
+BS_KEY='numero_chave'
+```
+
+- Inicializar o Appium Desktop
+
+- Inicializar o emulador do Android Studio ou do BrowserStack
+
+- Executar todos os testes:
+
+```
+npm run regression
+```
+
+- Executar o teste através de tag:
+
+```
+npm run tag @nome_tag
+```
+
+- Executar o teste através do gherkin:
+
+```
+npm run gherkin
+```
+
+Observação: é necessário que esteja configurado o ANDROID_HOME nas variáveis de ambiente da sua máquina.
+
+## 📂 Estrututa do projeto:
+
+| Diretório       | Finalidade                                                                             |
+| --------------- | -------------------------------------------------------------------------------------- |
+| ./husky         | Configuração da automação dos commits                                                  |
+| ./helpers       | Configuração com Custom Commands, Hooks e Utils com funções utilizadas na automação    |
+| ./resource/app  | Arquivo APK da aplicação que está integrado ao Android Studio                          |
+| ./resource/conf | Capabilitys dos dispositivos do Android Studio e BrowserStack                          |
+| ./resource/data | Credenciais para logar no aplicativo móvel SauceLabs                                   |
+| ./tests         | Testes e2e, features, screens e Step Definitions concernentes aos testes automatizados |
+
+## 💡 Observações:
+
+- Além de informar as credenciais no arquivo .env para realizar a integração com o BrowserStack, é necessário realizar o upload do APK no BrowserStack e copiar o código gerado e inserir no arquivo './resoluces/conf/\*/caps.json' no campo 'app'.
+
+## 📷 Vídeo de execução no BrowserStack:
+
+Segue vídeo evidenciando a execução do cenário de teste através do BrowserStack:
+
+- Dispositivo: Xiaomi Redmi Note 11,
+- Sistema Operacional: Android 11.0.
+
+https://github.com/Samuel-Leite/web-app-swaglabs-codeceptjs-appium/assets/74505293/cbe4340e-48e7-48b8-adb0-0a0afd071bf1
+
+## 🔗 Links para Apoio:
+
+- [CodeceptJs Appium](https://codecept.io/helpers/Appium.html)
+- [Capabilitys do BrowserStack](https://www.browserstack.com/app-automate/capabilities?tag=w3c)
+- [Ações de toque do Appium no CodeceptJS](https://sandeepqaops.medium.com/appium-touch-actions-in-codeceptjs-double-tap-press-long-press-drag-and-drop-etc-390b0edca65d)
+- [Download do Appium Desktop](https://github.com/appium/appium-desktop/releases)

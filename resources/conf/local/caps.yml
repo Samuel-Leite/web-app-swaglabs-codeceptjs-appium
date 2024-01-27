@@ -1,0 +1,13 @@
+mobile:
+  platformName: "Android"
+  deviceName: "pixel"
+  platformVersion: "9"
+  automationName: "UiAutomator2"
+  browserName: "Chrome"
+
+tablet:
+  platformName: "Android"
+  deviceName: "tabletPixel"
+  platformVersion: "9"
+  automationName: "UiAutomator2"
+  browserName: "Chrome"
