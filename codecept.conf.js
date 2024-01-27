@@ -61,7 +61,8 @@ exports.config = {
     },
     allure: {
       enabled: true,
-      require: '@codeceptjs/allure-legacy'
+      require: '@codeceptjs/allure-legacy',
+      outputDir: './output'
     },
     stepByStepReport: {
       enabled: true,

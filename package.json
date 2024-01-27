@@ -7,9 +7,9 @@
     "prepare": "husky install",
     "precommit": "git add . ",
     "commit": "git cz && node .husky/push.js",
-    "test": "npx codeceptjs run --steps",
-    "web": "npx codeceptjs run ./tests/e2e/*_test.js && allure serve output",
-    "tag": "npx codeceptjs run ./tests/e2e/*_test.js --grep",
+    "regression": "npx codeceptjs run ./tests/e2e/*_test.js --verbose",
+    "tag": "npx codeceptjs run ./tests/e2e/*_test.js --verbose --grep",
+    "gherkin": "npx codeceptjs run --features --verbose",
     "lint": "eslint src --max-warnings=0"
   },
   "lint-staged": {
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@codeceptjs/allure-legacy": "^1.0.2",
+    "allure-commandline": "^2.25.0",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
