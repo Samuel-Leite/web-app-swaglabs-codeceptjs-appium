@@ -2,21 +2,18 @@
 const { I } = inject()
 
 module.exports = {
-  fields: {
-    userName: '//input[@id = "user-name"]',
-    password: '//input[@id = "password"]'
+  locs: {
+    txtUserName: '//input[@id = "user-name"]',
+    txtPassword: '//input[@id = "password"]',
+    btnEnter: '//input[@id = "login-button"]'
   },
 
-  button: {
-    enter: '//input[@id = "login-button"]'
-  },
-
-  loginApp(userName, password) {
+  loginApp(user, pass) {
     I.amOnPage('https://www.saucedemo.com')
-    I.waitForElement(this.fields.userName, 3)
-    I.fillField(this.fields.userName, userName)
-    I.fillField(this.fields.password, password)
-    I.click(this.button.enter)
+    I.waitForElement(this.locs.txtUserName, 3)
+    I.fillField(this.locs.txtUserName, user)
+    I.fillField(this.locs.txtPassword, pass)
+    I.click(this.locs.btnEnter)
     I.wait(2)
   }
 }

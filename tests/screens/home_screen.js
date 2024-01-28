@@ -2,18 +2,18 @@
 const { I } = inject()
 
 module.exports = {
-  homeMenu: {
-    menu: '//*[contains(@class, "app_logo")]',
-    cart: '//*[contains(@class, "shopping_cart_link")]'
+  locs: {
+    btnMenu: '//*[contains(@class, "app_logo")]',
+    btnCart: '//*[contains(@class, "shopping_cart_link")]'
   },
 
   checkLoginSuccess() {
-    I.waitForElement(this.homeMenu.menu, 5)
-    I.seeElement(this.homeMenu.menu)
+    I.waitForElement(this.locs.btnMenu, 5)
+    I.seeElement(this.locs.btnMenu)
   },
 
   checkCart() {
-    I.click(this.homeMenu.cart)
+    I.click(this.locs.btnCart)
     I.wait(2)
   }
 }

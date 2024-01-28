@@ -3,13 +3,10 @@
 const { I } = inject()
 
 module.exports = {
-  homeMenu: {
-    addCart: '//*[contains(text(),"Add to cart")]',
-    pageBack: '//*[contains(text(),"Back to products")]'
-  },
-
-  products: {
-    bikeLight: '//*[contains(text(),"Sauce Labs Bike Light")]'
+  locs: {
+    btnAddCart: '//*[contains(text(),"Add to cart")]',
+    btnPageBack: '//*[contains(text(),"Back to products")]',
+    btnBikeLight: '//*[contains(text(),"Sauce Labs Bike Light")]'
   },
 
   addBackpackToCart() {
@@ -29,7 +26,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.click(this.homeMenu.addCart)
+    I.click(this.locs.btnAddCart)
     I.wait(3)
   },
 
@@ -46,7 +43,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(2)
-    I.click(this.products.bikeLight)
+    I.click(this.locs.btnBikeLight)
     I.wait(2)
 
     I.touchPerform([
@@ -61,7 +58,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.click(this.homeMenu.addCart)
+    I.click(this.locs.btnAddCart)
     I.wait(3)
   },
 
@@ -100,7 +97,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.click(this.homeMenu.addCart)
+    I.click(this.locs.btnAddCart)
     I.wait(3)
   },
 
@@ -139,7 +136,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.click(this.homeMenu.addCart)
+    I.click(this.locs.btnAddCart)
     I.wait(3)
   },
 
@@ -178,7 +175,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.click(this.homeMenu.addCart)
+    I.click(this.locs.btnAddCart)
     I.wait(3)
   },
 
@@ -217,7 +214,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.click(this.homeMenu.addCart)
+    I.click(this.locs.btnAddCart)
     I.wait(3)
   },
 
@@ -234,7 +231,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.click(this.homeMenu.pageBack)
+    I.click(this.locs.btnPageBack)
     I.wait(3)
   }
 }
