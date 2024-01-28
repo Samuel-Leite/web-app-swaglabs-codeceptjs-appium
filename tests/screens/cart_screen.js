@@ -3,34 +3,28 @@
 const { I } = inject()
 
 module.exports = {
-  buttons: {
-    removeProduct: '//*[contains(text(),"Remove")]',
-    continueShopping: '//input[@id = "continue"]',
-    checkout: '//*[contains(text(),"Checkout")]',
-    cancel: '//button[@id = "cancel"]',
-    finish: '//button[@id = "finish"]'
-  },
-
-  fields: {
-    firstName: '//input[@id = "first-name"]',
-    lastName: '//input[@id = "last-name"]',
-    postalCode: '//input[@id = "postal-code"]'
-  },
-
-  message: {
-    paymentSuccess: 'Thank you for your order!'
+  locs: {
+    btnRemoveProduct: '//*[contains(text(),"Remove")]',
+    btnContinue: '//input[@id = "continue"]',
+    btnCheckout: '//*[contains(text(),"Checkout")]',
+    btnCancel: '//button[@id = "cancel"]',
+    btnFinish: '//button[@id = "finish"]',
+    txtFirstName: '//input[@id = "first-name"]',
+    txtLastName: '//input[@id = "last-name"]',
+    txtPostalCode: '//input[@id = "postal-code"]',
+    lblPaymentSuccess: 'Thank you for your order!'
   },
 
   checkoutProduct() {
-    I.click(this.buttons.checkout)
+    I.click(this.locs.btnCheckout)
     I.wait(3)
   },
 
-  dataBuyer(txtFirstName, txtLastName, txtPostalCode) {
-    I.fillField(this.fields.firstName, txtFirstName)
-    I.fillField(this.fields.lastName, txtLastName)
-    I.fillField(this.fields.postalCode, txtPostalCode)
-    I.click(this.buttons.continueShopping)
+  dataBuyer(firstName, lastName, postalCode) {
+    I.fillField(this.locs.txtFirstName, firstName)
+    I.fillField(this.locs.txtLastName, lastName)
+    I.fillField(this.locs.txtPostalCode, postalCode)
+    I.click(this.locs.btnContinue)
     I.wait(3)
   },
 
@@ -46,8 +40,8 @@ module.exports = {
       },
       { action: 'release' }
     ]),
-      I.waitForElement(this.buttons.finish)
-    I.click(this.buttons.finish)
+      I.waitForElement(this.locs.btnFinish)
+    I.click(this.locs.btnFinish)
     I.wait(3)
 
     I.touchPerform([
@@ -62,7 +56,7 @@ module.exports = {
       { action: 'release' }
     ]),
       I.wait(3)
-    I.see(this.message.paymentSuccess)
+    I.see(this.locs.lblPaymentSuccess)
     I.wait(3)
   }
 }

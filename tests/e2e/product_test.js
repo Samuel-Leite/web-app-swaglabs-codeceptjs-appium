@@ -7,7 +7,6 @@ const fs = require('fs')
 const path = require('path') // Importe o módulo 'path'
 const yaml = require('js-yaml')
 
-// variable global
 const { loginScreen, homeScreen, productScreen, cartScreen } = inject()
 const name = require('../../helpers/utils')
 const code = require('../../helpers/utils')
@@ -24,7 +23,7 @@ const postalCode = code.getCode()
 
 Before(() => {
   loginScreen.loginApp(credencial.user, credencial.password)
-  // homeScreen.checkLoginSuccess()
+  homeScreen.checkLoginSuccess()
 })
 
 After(() => {
