@@ -3,7 +3,7 @@ const { I } = inject()
 
 module.exports = {
   locs: {
-    btnMenu: '//*[contains(@class, "app_logo")]',
+    btnMenu: '//*[contains(@class, "app_logo") and text() = "Swag Labs"]',
     btnCart: '//*[contains(@class, "shopping_cart_link")]'
   },
 
