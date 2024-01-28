@@ -1,37 +1,12 @@
-Feature: Online shopping via mobile web
-  As a persona
-  I'd like to access the SwagLabs app
-  To buy items
+Feature: Compras através do aplicativo SwagLabs 
+  Eu como usuário
+  Gostaria de acessar o aplicativo SwagLabs
+  E efetuar a compra dos seus produtos com sucesso
 
-  Background: I'd like to logged into Swag Labs
-    Given that I am logged into Swag Labs over the internet
+  Background: Realizar o login na plataforma SwagLabs
+    Given que o usuario esteja logado
 
-  Scenario: I'd like to add the backpack to the cart online
-    When I add the Backpack to the cart over the internet
-    And fill in all payment details over the internet
-    Then the payment is completed successfully over the internet
-
-  Scenario: I'd like to add the Bike Light to the cart online
-    When I add the Bike Light to the cart over the internet
-    And fill in all payment details over the internet
-    Then the payment is completed successfully over the internet
-
-  Scenario: I'd like to add the Bolt T-Shirt to the cart online
-    When I add the Bolt T-Shirt to the cart over the internet
-    And fill in all payment details over the internet
-    Then the payment is completed successfully over the internet
-
-  Scenario: I'd like to add the Fleece Jacket to the cart online
-    When I add the Fleece Jacket to the cart over the internet
-    And fill in all payment details over the internet
-    Then the payment is completed successfully over the internet
-
-  Scenario: I'd like to add the Onesie to the cart online
-    When I add the Onesie to the cart over the internet
-    And fill in all payment details over the internet
-    Then the payment is completed successfully over the internet
-
-  Scenario: I'd like to add the T-Shirt RED to the cart online
-    When I add the T-Shirt RED to the cart over the internet
-    And fill in all payment details over the internet
-    Then the payment is completed successfully over the internet
+  Scenario: Efetuar a compra do produto 'Mochila' com sucesso
+    When usuario adicionar a mochila ao carrinho de compras
+    And efetuar a compra do produto
+    Then pagamento do produto sera efetuada com sucesso

@@ -52,7 +52,7 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './tests/features/webTest.feature',
+    features: './tests/features/product.feature',
     steps: ['./tests/step_definitions/product_steps.js']
   },
   plugins: {
